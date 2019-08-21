@@ -29,7 +29,10 @@ function requestVerifier(req, res, next) {
   );
 }
 app.get('/',function(req,res){
-  res.json({"Status":'Done'});
+  request.get({"url":'https://google.com'},function(err,response){
+	res.write(response.body);
+	res.end();
+  });
 });
 app.get('/login',function(req,res){
 	try{
