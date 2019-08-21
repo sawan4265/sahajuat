@@ -28,7 +28,9 @@ function requestVerifier(req, res, next) {
     }
   );
 }
-
+app.get('/',function(req,res){
+  res.json({"Status":'Done'});
+});
 app.get('/login',function(req,res){
 	try{
 		fs.readFileSync('./html/login.html');
@@ -79,101 +81,6 @@ app.post('/testdialogflow',function (req, res) {
 		
 	    });
 	
-});
-
-app.post('/alexa',requestVerifier,function(req,res){
-
-	var reqTimestamp = new Date(req.body.request.timestamp).getTime();
-	var curTimestamp = new Date().getTime();
-	var delayinSeconds = (curTimestamp-reqTimestamp)/1000;
-	
-	
-	if(delayinSeconds<150)
-	{
-		request.post(
-	    {
-			url : 'https://115.254.126.74:1144/alexa',	
-			json : req.body,			
-			strictSSL: false
-		}, 
-	    function(err,response,b){
-			 if(err || response.statusCode != 200)
-			 {
-				 res.json({
-						"version": "1.0",
-						"response": {
-						  "shouldEndSession": false,
-						  "outputSpeech": {
-							"type": "SSML",
-							"ssml": "<speak>" + "Error occurred" + "</speak>"
-						  }
-						}
-					   });
-				
-			 }
-		 else
-			 {
-			 res.json({
-						"version": "1.0",
-						"response": {
-						  "shouldEndSession": false,
-						  "outputSpeech": {
-							"type": "SSML",
-							"ssml": "<speak>" + response.body.message + "</speak>"
-						  }
-						}
-					   });
-			}
-		
-	    });
-	}
-	else{
-		return res.status(500).json({
-		  status: "error"
-		});
-	}
-
-});
-
-app.post('/alexa/token',function(req,res){
-	try
-	{
-		/*log('Request type: ' + typeof(req.body),true);
-		log('String: '+JSON.stringify(req.body),true);
-		log('Object: '+req.body,true);*/
-
-			request.post(
-			{
-				url : 'https://115.254.126.74:1144/oauth/alexatoken',	
-				//headers: req.headers,
-				json : req.body,			
-				strictSSL: false
-			}, 
-			function(err,response,b){
-				if(err || response.statusCode != 200)
-					{
-						res.json({
-									"access_token" : null,
-									"token_type" : null,
-									"expires_in" : null,
-									"refresh_token" : null
-							   });
-					}
-				 else
-					{
-					 res.json({
-								"access_token" : response.body.access_token,
-								"token_type" : "bearer",
-								"expires_in" : response.body.expires_in,
-								"refresh_token" : response.body.refresh_token
-							   });
-					}	
-			});
-	}
-	catch(e)
-	{
-	log(e.stack,true);
-	}
 });
 
 app.listen(process.env.PORT||9879);
