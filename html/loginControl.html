@@ -1,0 +1,33 @@
+<form name="form" ng-submit="lg.login()" role="form" autocomplete="off">
+    <div class="div-userrow" ng-class="{ 'has-error': form.username.$dirty && form.username.$error.required }">
+        <div class="form-group_transform">
+            <input type="email" maxlength="250" name="lusername" autocomplete="off" data-empty="true" value="" onkeyup="onBlurTex(this)" pattern="[A-Za-z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,3}$" id="lusername" class="txtboxlogin" ng-model="lg.lusername" required />
+            <label class="txtlogincontrol" for="lusername" translate>ENTER_EMAIL</label>
+        </div>
+    </div>
+    <div class="div-userrow" ng-class="{ 'has-error': form.password.$dirty && form.password.$error.required }">       
+        <div class="form-group_transform">
+            <input type="password" name="lpassword" id="lpassword" autocomplete="off" data-empty="true" value="" onkeyup="onBlurTex(this)" maxlength="12" pattern="(?=.*\d)(?=.*[a-z,A-Z]).{6,12}"  class="form-input_transform txtboxlogin" ng-model="lg.lpassword" required />
+            <label class="form-label_transform txtlogincontrol" for="lpassword" translate>ENTER_PASSWORD</label>
+            <a onclick="showPassword('lpassword',this)" class="showpasswordicon"></a>
+        </div>
+    </div>
+    <div ng-hide="true" class="div-userrow">
+        <input type="checkbox" id="checkbox1" onclick="showPassword(lpassword,this)" /><label for="checkbox1"> {{'SHOW_PASSWORD' | translate}}</label>
+    </div>
+    <div class="div-loginpanelbutton">
+        <button type="submit" ng-disabled="form.$invalid || lg.dataLoading" class="loginbtn" translate>SIGN_IN</button>
+    </div>
+    <div class="div-userrow" id="div_forgotpwd">
+        <a href="/forgotpassword" translate class="btnforgetpassword">FORGOT_PASSWORD</a>
+    </div>
+    <div class="div-userrow" id="aForgotPassword">
+        <span>New to Beanbag cool?</span>
+        <a href="/register" class="btnregister" translate>REGISTER</a>
+    </div>
+</form>
+<script type="text/javascript">
+    $(document).ready(function () {
+        getFocus();
+    });
+</script>

@@ -1,0 +1,430 @@
+﻿@font-face {
+    font-family: "Kohinoornewregular";
+    src: url("/fonts/Kohinoor Devanagari Regular.woff") format("woff");
+}
+
+body {
+    background-color: #f6f6f6;
+    font-family: Kohinoornewregular;
+}
+
+input[type=text]:-webkit-autofill {
+    -webkit-box-shadow: 0 0 0 30px white inset;
+}
+
+.loginform {
+    background-color: #f6f6f6;
+    position: fixed;
+    left: 0px;
+    right: 0px;
+    top: 0px;
+    bottom: 46px;
+}
+
+#login_logodiv, #resetpwd_logodiv {
+    position: absolute;
+    top: 50%;
+    transform: translate(0,-50%);
+    -ms-transform: translate(0,-50%);
+    -webkit-transform: translate(0,-50%);
+    left: 15%;
+}
+
+    #login_logodiv > div, #resetpwd_logodiv > div {
+        background-image: url("/images/logo.png");
+        height: 105px;
+        width: 330px;
+        background-repeat: no-repeat;
+    }
+
+#div-loginpanelbackground, #div-resetpwdpanelbackground, #div-registerpanelbackground {
+    position: absolute;
+    right: 10%;
+    top: 50%;
+    transform: translate(0,-50%);
+    -ms-transform: translate(0,-50%);
+    -webkit-transform: translate(0,-50%);
+    padding: 26px;
+    background-color: #ffffff;
+}
+
+/*Login panel inner container*/
+
+.div-loginpanelheader {
+    margin-bottom: 25px;
+}
+
+    .div-loginpanelheader > span, .div-createaccountpanelheader > span {
+        color: #607073;
+        font-size: 20.4px;
+    }
+
+.div-createaccountpanelheader {
+    padding-bottom: 18px;
+}
+
+.div-userrow {
+    width: 347px;
+}
+
+.div-loginpanelbutton {
+    margin-bottom: 25px;
+}
+
+.div-registerrow {
+    margin: 2% 4% 2% 4%;
+    float: left;
+    width: 92%;
+}
+
+.div-registerbuttonrow {
+    margin: 4%;
+    float: left;
+    width: 92%;
+}
+
+#resendOtp {
+    font-size: 13px;
+    color: #686868;
+}
+
+.txtlogincontrol {
+    color: #969696;
+    font-size: 13px;
+    letter-spacing: 1px;
+    margin-bottom: 4px;
+}
+
+.txtregistercontrol {
+    color: #686868;
+    font-size: 13px;
+}
+
+.loginbgpadding {
+    padding-top: 30px;
+    padding-bottom: 30px;
+    padding-left: 30px;
+    padding-right: 30px;
+    background-color: #ffffff;
+}
+
+.welcomediv {
+    color: #607073;
+    font-size: 18px;
+}
+
+.usernamediv {
+    padding-bottom: 30px;
+    padding-left: 0px;
+}
+
+.txtboxlogin {
+    border: 0px none;
+    font-family: Kohinoornewregular;    
+    outline: none;
+    border-bottom: solid 1px #cecccc;
+    padding: 6px 0px;
+    margin-bottom: 15px;
+    color: #5094ab !important;
+    width: 100%;
+    font-size: 16px;
+    letter-spacing: 1.3px;
+}
+
+.div-password {
+    position: relative;
+}
+
+
+.div-loginbtn {
+    margin-bottom: 4%;
+    float: left;
+    width: 100%;
+}
+
+.loginbtn {
+    width: 100%;
+}
+
+.btnforgetpassword {
+    font-size: 13px;
+    color: #686868;
+}
+
+a {
+    text-decoration: none;
+}
+
+#aForgotPassword {
+    text-align: center;
+    bottom: 20px;
+    width: auto;
+    margin-top: 42px;
+    left: 0px;
+    right: 0px;
+}
+
+    #aForgotPassword > span {
+        font-size: 13px;
+        color: #686868;
+    }
+
+.txtloginform {
+    font-size: 13px;
+    color: #686868;
+}
+
+.btnregister {
+    font-size: 13px;
+    color: #5094ab;
+}
+
+    .btnregister:hover, .btnforgetpassword:hover {
+        font-family: KohinoornewMedium;
+    }
+/*End of login panel inner container*/
+
+/*Register panel inner container*/
+/*.div-progreesbar {
+    padding-bottom: 45px;
+}*/
+
+.progressbar {
+    margin: 0;
+    padding: 0;
+    counter-reset: step;
+}
+
+
+
+.activestate > span {
+    color: #5094ab;
+}
+
+/*.div-registrationstap {
+    width: 100px;
+}
+
+.dot {
+    height: 20px;
+    width: 20px;
+    background-color: #d3d5d6;
+    border-radius: 50%;
+    display: inline-block;
+    color: #ffffff;
+}
+
+.line {
+    display: block;
+    height: 0px;
+    border: 0;
+    border-top: 2px solid #d3d5d6;
+    margin-top: 10px;
+    padding: 0;
+    float: left;
+    width: 95px;
+    margin-left: -80px;
+}
+
+.active-line {
+    display: block;
+    height: 0px;
+    border: 0;
+    border-top: 2px solid #5094ab;
+    margin-top: 10px;
+    padding: 0;
+    float: left;
+    width: 95px;
+    margin-left: -80px;
+}
+
+.activedot {
+    height: 20px;
+    width: 20px;
+    background-color: #5094ab;
+    border-radius: 50%;
+    display: inline-block;
+    color: #ffffff;
+}
+
+.active-text {
+    color: #5094ab;
+    font-size: 13px;
+}
+
+.normal-text {
+    font-size: 13px;
+    color: #d1d3d4;
+}
+
+.dot span, .activedot span {
+    margin-left: 7px;
+    margin-top: 4px;
+    float: left;
+    font-size: 14px;
+}*/
+
+.div_OTPinfotxt_margin-top {
+    padding-top: 30px;
+}
+
+.div_OTPinfotxt_width {
+    width: 335px;
+}
+
+.div_pwdnotewidth {
+    width: 335px;
+}
+
+.div_OTPinfotxt {
+    margin-bottom: 38px;
+}
+
+.OTPinfotxt {
+    color: #686868;
+    font-size: 17px;
+    word-break: normal;
+}
+
+.div-otp {
+    width: 10%;
+    margin-right: 3%;
+    float: none;
+    display: inline-block;
+}
+
+.div-registerrowotp {
+    margin-bottom: 10%;
+    float: left;
+    width: 100%;
+}
+
+.div-otp:last-child {
+    margin-right: 0%;
+}
+
+.txtboxotp {
+    border: 0px none;
+    outline: none;
+    border-bottom: solid 1px #cecccc;
+    padding: 6px 0px;
+    color: #5094ab;
+    width: 100%;
+    text-align: center;
+}
+
+.editablemobileno {
+    color: #57a1ba;
+    font-size: 17px;
+}
+
+.div-successicon {
+    width: 49px;
+    height: 35px;
+    background-image: url(/images/success_icon.png);
+    background-repeat: no-repeat;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 33px;
+    margin-top: 33px;
+}
+
+.div-success-msg {
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    color: #686868;
+    font-size: 22px;
+}
+
+.smallfont {
+    font-size: 13px;
+    color: #686868;
+}
+
+.div-login-register {
+    margin-top: 20px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+}
+/*End of Register panel inner container*/
+
+/*Forget password panel starts here*/
+
+
+/*#div-resetpwdpanelbackground .div-registrationstap {
+    width: 95px;
+}*/
+/*#div-resetpwdpanelbackground .finish {
+    width: 50px;
+}
+
+#div-resetpwdpanelbackground .resetpwd {
+    width: 95px;
+}
+
+#div-resetpwdpanelbackground .line {
+    width: 81px;
+    margin-left: -80px;
+}
+
+#div-resetpwdpanelbackground .linefinish {
+    margin-left: -75px;
+    display: block;
+    height: 0px;
+    border: 0;
+    border-top: 2px solid #d3d5d6;
+    margin-top: 10px;
+    padding: 0;
+    float: left;
+}
+
+#div-resetpwdpanelbackground .active-line {
+    width: 81px;
+    margin-left: -81px;
+}*/
+/*Forget password panel Ends here*/
+
+.footer {
+    width: 100%;
+    position: fixed;
+    bottom: 0;
+    background-color: #ffffff;
+    color: #6e6e6e;
+    height: 46px;
+    font-size: 12px;
+    
+    padding-top: 7px;
+    cursor: default;
+}
+
+.text_copyright {
+    padding-left: 15px;
+    float: left;
+    font-size: 12px;
+    margin-top: 12px;
+}
+
+/*.txt_terms {
+    padding-right: 15px;
+    float: right;
+    display: block;
+    font-size: 13px;
+}*/
+
+.footerlogo {
+    background-image: url(/images/securefooterlogo.png);
+    height: 26px;
+    width: 99px;
+    margin-right: 15px;
+}
+
+
+
+
+.alreadyhaveAccount {
+    text-align: center;
+    font-size: 13px;
+}
