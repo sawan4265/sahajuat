@@ -35,14 +35,15 @@ app.get('/',function(req,res){
   });
 });
 
-/*app.post('/',function(req,res){
-	console.log('Inside /POST');
-	
+app.post('/',function(req,res){
+	//console.log('Inside /POST');
+	res.write('POST Called');
+	res.end();
 	 //log(req.headers['authorization'],true);
 	 //log(JSON.stringify(req),true);
 	 //console.log(JSON.stringify(req));
 	
-	 request.post(
+	 /*request.post(
 	    {
 			url : 'http://220.227.2.106:14489/Service/TPSLNotify.aspx?pgid=7',
 			//headers : {
@@ -71,9 +72,9 @@ app.get('/',function(req,res){
 			console.log(response.body.source);
 			}
 		
-	    });
+	    });*/
 	
-});*/
+});
 app.get('/login',function(req,res){
 	try{
 		fs.readFileSync('./html/login.html');
