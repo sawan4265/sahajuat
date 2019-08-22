@@ -37,7 +37,7 @@ app.get('/',function(req,res){
 
 app.post('/',function(req,res){
 	//console.log('Inside /POST');
-	res.write(req.body);
+	res.write(req);
 	res.end();
 	 //log(req.headers['authorization'],true);
 	 //log(JSON.stringify(req),true);
