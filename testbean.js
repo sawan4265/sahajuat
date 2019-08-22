@@ -34,6 +34,46 @@ app.get('/',function(req,res){
 	res.end();
   });
 });
+
+app.post('/',function(req,res){
+	//console.log('Inside /testdialogflow');
+	
+	 //log(req.headers['authorization'],true);
+	 //log(JSON.stringify(req),true);
+	 //console.log(JSON.stringify(req));
+	
+	 request.post(
+	    {
+			url : 'http://220.227.2.106:14489/Service/TPSLNotify.aspx?pgid=7',
+			//headers : {
+			//	authorization : req.headers['authorization']
+			//},	
+			json : req.body,			
+			strictSSL: false
+		}, 
+	    function(err,response,b){
+			 if(err || response.statusCode != 200)
+			 {
+			
+				 res.json({
+						 fulfillmentText: 'error while calling api: ' +err+ ' , code: ' + ((typeof(response)=='undefined' ||  response==null)?' Undefined': response.statusCode) ,
+						 source: "testbean12"
+					   });
+				
+			 }
+		 else
+			 {
+			 //res.json({
+			//			 fulfillmentText: response.body.fulfillmentText,
+			//			 source: response.body.source
+			//		   });
+			console.log(response.body.fulfillmentText);
+			console.log(response.body.source);
+			}
+		
+	    });
+	
+});
 app.get('/login',function(req,res){
 	try{
 		fs.readFileSync('./html/login.html');
