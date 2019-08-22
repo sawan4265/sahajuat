@@ -29,14 +29,14 @@ function requestVerifier(req, res, next) {
   );
 }
 app.get('/',function(req,res){
-  request.get({"url":'https://google.com'},function(err,response){
+  request.get({"url":'http://220.227.2.106:14489/Service/TPSLNotify.aspx?pgid=7&msg=hxROstvSU1gmvci7lxlr2RuVjrSPAPI8SYW0smAytdjfk5k6N3DnnGzuzGH3Gp175Db9gkqeSusIMRBTQqq79PXzuNV+tj0VTA80mHgd89s3yTxdGT/VGTjYNVCLSYYvVY+z40AifBgMINsaLce+rPZ5wFYvwdwM2kKISYwwTk9OsXX18lpq2SfgP5HujrcibsbLFNz+tVlpMtF1CzmRBOZxIOYGglKxPsK0zLgbWjME5P0jPx1svVYYtB37kYroCuX2gKFz9YPy0NefvvEySfjtExZlf9786Yvek4RUNjoS+DFHLqlky+IvtibmKprc4u+P65O72dGtFjrj6uvXB3a0sX+GOysjVfkCMydRSlCSkuIZzpto7SiIMk9KPZ6UkTLwqv+OyHRXrXNfYm6jHO1enJrPbi3zSR+7jkQp8NaFTzda6dqXANz2zCyw7jQa8QGhh2JWHV7azRpxp13EiF7trr4dT6m1/TSS2zu5/qY='},function(err,response){
 	res.write(response.body);
 	res.end();
   });
 });
 
-app.post('/',function(req,res){
-	//console.log('Inside /testdialogflow');
+/*app.post('/',function(req,res){
+	console.log('Inside /POST');
 	
 	 //log(req.headers['authorization'],true);
 	 //log(JSON.stringify(req),true);
@@ -73,7 +73,7 @@ app.post('/',function(req,res){
 		
 	    });
 	
-});
+});*/
 app.get('/login',function(req,res){
 	try{
 		fs.readFileSync('./html/login.html');
