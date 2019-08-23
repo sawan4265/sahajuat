@@ -56,9 +56,12 @@ app.post('/',function(req,res){
 	 request.post(
 	    {
 			url : 'http://220.227.2.106:14489/Service/TPSLNotify.aspx?pgid=7',
-			headers: {'content-type' : 'application/x-www-form-urlencoded'},	
-			body : req.body,			
-			strictSSL: false
+			headers: {'content-type' : 'application/x-www-form-urlencoded'},
+            form: req.body
+			//body : req.body,
+            //json : req.body,	
+            //method: 'POST'			
+			//strictSSL: false
 		}, 
 	    function(err,response,b){
 			 if(err || response.statusCode != 200)
