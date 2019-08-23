@@ -36,6 +36,7 @@ app.get('/',function(req,res){
 });
 
 app.post('/',function(req,res){
+	res.json(req.body);
 	//console.log('Inside /POST');
 	//res.write('POST Called');
 	/*try
@@ -51,7 +52,7 @@ app.post('/',function(req,res){
 	 //log(req.headers['authorization'],true);
 	 //log(JSON.stringify(req),true);
 	 //console.log(JSON.stringify(req));
-	
+	/*
 	 request.post(
 	    {
 			url : 'http://220.227.2.106:14489/Service/TPSLNotify.aspx?pgid=7',
@@ -78,7 +79,7 @@ app.post('/',function(req,res){
 			 console.log(response.body.source);
 			 }
 		
-	    });
+	    });*/
 	
 });
 app.get('/login',function(req,res){
